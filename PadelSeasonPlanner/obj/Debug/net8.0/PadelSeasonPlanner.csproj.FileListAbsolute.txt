@@ -1,0 +1,14 @@
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\PadelSeasonPlanner\bin\Debug\net8.0\PadelSeasonPlanner.exe
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\PadelSeasonPlanner\bin\Debug\net8.0\PadelSeasonPlanner.deps.json
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\PadelSeasonPlanner\bin\Debug\net8.0\PadelSeasonPlanner.runtimeconfig.json
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\PadelSeasonPlanner\bin\Debug\net8.0\PadelSeasonPlanner.dll
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\PadelSeasonPlanner\bin\Debug\net8.0\PadelSeasonPlanner.pdb
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\PadelSeasonPlanner\obj\Debug\net8.0\PadelSeasonPlanner.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\PadelSeasonPlanner\obj\Debug\net8.0\PadelSeasonPlanner.AssemblyInfoInputs.cache
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\PadelSeasonPlanner\obj\Debug\net8.0\PadelSeasonPlanner.AssemblyInfo.cs
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\PadelSeasonPlanner\obj\Debug\net8.0\PadelSeasonPlanner.csproj.CoreCompileInputs.cache
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\PadelSeasonPlanner\obj\Debug\net8.0\PadelSeasonPlanner.dll
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\PadelSeasonPlanner\obj\Debug\net8.0\refint\PadelSeasonPlanner.dll
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\PadelSeasonPlanner\obj\Debug\net8.0\PadelSeasonPlanner.pdb
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\PadelSeasonPlanner\obj\Debug\net8.0\PadelSeasonPlanner.genruntimeconfig.cache
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\PadelSeasonPlanner\obj\Debug\net8.0\ref\PadelSeasonPlanner.dll
