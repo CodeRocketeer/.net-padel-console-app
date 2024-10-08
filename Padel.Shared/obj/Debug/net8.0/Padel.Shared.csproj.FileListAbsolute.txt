@@ -1,0 +1,12 @@
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\Padel.Shared\bin\Debug\net8.0\Padel.Shared.deps.json
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\Padel.Shared\bin\Debug\net8.0\Padel.Shared.dll
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\Padel.Shared\bin\Debug\net8.0\Padel.Shared.pdb
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\Padel.Shared\obj\Debug\net8.0\Padel.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\Padel.Shared\obj\Debug\net8.0\Padel.Shared.AssemblyInfoInputs.cache
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\Padel.Shared\obj\Debug\net8.0\Padel.Shared.AssemblyInfo.cs
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\Padel.Shared\obj\Debug\net8.0\Padel.Shared.csproj.CoreCompileInputs.cache
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\Padel.Shared\obj\Debug\net8.0\Padel.Shared.sourcelink.json
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\Padel.Shared\obj\Debug\net8.0\Padel.Shared.dll
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\Padel.Shared\obj\Debug\net8.0\refint\Padel.Shared.dll
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\Padel.Shared\obj\Debug\net8.0\Padel.Shared.pdb
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\Padel.Shared\obj\Debug\net8.0\ref\Padel.Shared.dll

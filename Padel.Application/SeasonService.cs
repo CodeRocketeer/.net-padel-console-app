@@ -1,5 +1,6 @@
 ﻿using Padel.Contracts;
 using Padel.Domain.Models;
+using Padel.Shared.Utils;
 using System;
 using System.Collections.Generic;
 
@@ -15,19 +16,11 @@ namespace Padel.Application
             _matchService = matchService;
         }
 
-        public Season GenerateSeason(string title, string dayOfWeek, DateTime startDate, List<User> players)
+        public Season CreateSeason(string title, string dayOfWeek, DateTime startDate, List<User> players, int amountOfMatches)
         {
-            // Convert string dayOfWeek to DayOfWeek enum
-            DayOfWeek chosenDay;
-            try
-            {
-                chosenDay = (DayOfWeek)Enum.Parse(typeof(DayOfWeek), dayOfWeek, true);
-            }
-            catch (ArgumentException)
-            {
-                throw new ArgumentException($"Invalid day of the week: {dayOfWeek}");
-            }
-
+            // Use the utility function to parse and validate the day of the week
+            DayOfWeek chosenDay = ValidationUtils.ParseDayOfWeek(dayOfWeek);
+          
             // Adjust start date to the next occurrence of the chosen day
             while (startDate.DayOfWeek != chosenDay)
             {
@@ -38,7 +31,7 @@ namespace Padel.Application
             Season season = new Season(title, startDate, chosenDay);
 
             // Generate matches using the MatchService
-            List<Match> matches = _matchService.GenerateMatches(dayOfWeek, players, startDate);
+            List<Match> matches = _matchService.CreateMatches(dayOfWeek, players, startDate, amountOfMatches);
             season.Matches.AddRange(matches);
 
             // Set the season's end date
@@ -55,12 +48,14 @@ namespace Padel.Application
             return _seasons;
         }
 
+        // Get the season with the given title, later on this will be replaced by an ID
         public Season GetSeasonByTitle(string title)
         {
             // Find the season with the given title
             return _seasons.Find(s => s.Title.Equals(title, StringComparison.OrdinalIgnoreCase));
         }
 
+        // Delete the season with the given title, later on this will be replaced by an ID
         public Season DeleteSeason(string title)
         {
             // Find the season with the given title

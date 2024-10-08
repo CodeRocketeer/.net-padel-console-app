@@ -5,7 +5,7 @@ namespace Padel.Contracts
 {
     public interface ISeasonService
     {
-        Season GenerateSeason(string title, string dayOfWeek, DateTime startDate, List<User> players);
+        Season CreateSeason(string title, string dayOfWeek, DateTime startDate, List<User> players, int amountOfMatches);
         List<Season> GetAllSeasons();
         Season GetSeasonByTitle(string title);
         Season DeleteSeason(string title);

@@ -6,10 +6,15 @@ using Padel.Domain.Models;
 
 class Program
 {
+
+    static bool IsHardcodedProperties = true; // Set to true to use defaults, false to take user input
+
+
     static void Main(string[] args)
     {
-        IUserService userService = new UserService();
-        IMatchService matchService = new MatchService();
+        IUserService userService = new UserService(); 
+        ITeamService teamService = new TeamService();
+        IMatchService matchService = new MatchService(teamService);
         ISeasonService seasonService = new SeasonService(matchService);
 
         bool running = true;
@@ -46,53 +51,100 @@ class Program
     static void GenerateNewSeason(IUserService userService, ISeasonService seasonService)
     {
         List<User> players = new List<User>();
+        int minPlayers = 4;
 
-        Console.WriteLine("\n--- Create New Schedule ---");
-        Console.WriteLine("Enter player information (type 'done' to finish):");
 
-        // Add users
-        while (true)
+        if (IsHardcodedProperties)
         {
-            Console.Write("Enter player name: ");
-            string name = Console.ReadLine();
-            if (name.ToLower() == "done") break;
+            // Populate users table with test users
+            players = [
+                 new User { Name = "John", Sex = "M" },
+                new User { Name = "Jane", Sex = "F" },
+                new User { Name = "Bob", Sex = "M" },
+                new User { Name = "Alice", Sex = "F" },
+                new User { Name = "David", Sex = "M" },
+                new User { Name = "Sarah", Sex = "F" },
+                new User { Name = "Tom", Sex = "M" },
+                new User { Name = "Emily", Sex = "F" },
+                new User { Name = "Michael", Sex = "M" },
+                new User { Name = "Olivia", Sex = "F" },
+           ];
 
-            Console.Write("Enter player sex (M/F): ");
-            string sex = Console.ReadLine().ToUpper();
-            while (sex != "M" && sex != "F")
+                for (int i = 0; i < players.Count; i++)
             {
-                Console.WriteLine("Invalid input. Please enter 'M' for male or 'F' for female.");
-                sex = Console.ReadLine().ToUpper();
+                userService.CreateUser(players[i].Name, players[i].Sex);
             }
+                
 
-            // Add the player using the UserService
-            players = userService.AddUser(name, sex);
+            
+        }
+        else
+        {
+            Console.WriteLine("\n--- Create New Schedule ---");
+            Console.WriteLine("Enter player information (type 'done' to finish):");
+
+            // Add users
+            while (true)
+            {
+                Console.Write("Enter player name: ");
+                string name = Console.ReadLine();
+                if (name.ToLower() == "done") break;
+
+                Console.Write("Enter player sex (M/F): ");
+                string sex = Console.ReadLine().ToUpper();
+                while (sex != "M" && sex != "F")
+                {
+                    Console.WriteLine("Invalid input. Please enter 'M' for male or 'F' for female.");
+                    sex = Console.ReadLine().ToUpper();
+                }
+
+                // Add the player using the UserService
+                players = userService.CreateUser(name, sex);
+            }
         }
 
-        if (players.Count < 4)
+        if (players.Count < minPlayers)
         {
             Console.WriteLine("Not enough players to create a schedule. You need at least 4 players.");
             return;
         }
 
-        Console.Write("Enter the day of the week for the matches (e.g., Monday): ");
-        string dayOfWeek = Console.ReadLine();
+        string dayOfWeek;
+        string seasonTitle;
+        DateTime startDate;
+        int amountOfMatches;
 
-        Console.Write("Enter the season title: ");
-        string seasonTitle = Console.ReadLine();
+        if (IsHardcodedProperties)
+        {
+            
+            dayOfWeek = "Monday"; 
+            seasonTitle = "Default Season Title"; 
+            startDate = DateTime.Now; 
+            amountOfMatches = 20;
+        }
+        else
+        {
+            // Prompt user for input
+            Console.Write("Enter the day of the week for the matches (e.g., Monday): ");
+            dayOfWeek = Console.ReadLine();
 
-        Console.Write("Enter the start date for the season (yyyy-mm-dd): ");
-        DateTime startDate = DateTime.Parse(Console.ReadLine());
+            Console.Write("Enter the season title: ");
+            seasonTitle = Console.ReadLine();
 
-        // Generate the season
-        Season season = seasonService.GenerateSeason(seasonTitle, dayOfWeek, startDate, players);
+            Console.Write("Enter the amount of matches to be played in the season: ");
+            amountOfMatches = int.Parse(Console.ReadLine());
+
+            Console.Write("Enter the start date for the season (yyyy-mm-dd): ");
+            startDate = DateTime.Parse(Console.ReadLine());
+        }
+
+        Season season = seasonService.CreateSeason(seasonTitle, dayOfWeek, startDate, players, amountOfMatches);
 
         Console.WriteLine($"\nGenerated Season: {season.Title}");
         Console.WriteLine($"Start Date: {season.StartDate.ToShortDateString()}");
         Console.WriteLine($"End Date: {season.EndDate.ToShortDateString()}");
 
-        // Display the scheduled matches
-        Console.WriteLine("\nScheduled Matches:");
+        Console.WriteLine($"\nScheduled Matches ({season.Matches.Count}):");
         foreach (var match in season.Matches)
         {
             Console.WriteLine(match);
@@ -175,7 +227,7 @@ class Program
         Console.WriteLine($"\nSeason: {season.Title}, Start Date: {season.StartDate.ToShortDateString()}, End Date: {season.EndDate.ToShortDateString()}");
 
         // Display the scheduled matches
-        Console.WriteLine("\nScheduled Matches:");
+        Console.WriteLine($"\nScheduled Matches ({season.Matches.Count}):");
         foreach (var match in season.Matches)
         {
             Console.WriteLine(match);

@@ -9,3 +9,4 @@ C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\Pade
 C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\Padel.Domain\obj\Debug\net8.0\refint\Padel.Domain.dll
 C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\Padel.Domain\obj\Debug\net8.0\Padel.Domain.pdb
 C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\Padel.Domain\obj\Debug\net8.0\ref\Padel.Domain.dll
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\Padel.Domain\obj\Debug\net8.0\Padel.Domain.sourcelink.json

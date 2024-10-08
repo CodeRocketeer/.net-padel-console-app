@@ -19,7 +19,8 @@
       "Padel.Application/1.0.0": {
         "dependencies": {
           "Padel.Contracts": "1.0.0",
-          "Padel.Domain": "1.0.0"
+          "Padel.Domain": "1.0.0",
+          "Padel.Shared": "1.0.0"
         },
         "runtime": {
           "Padel.Application.dll": {
@@ -46,6 +47,14 @@
             "fileVersion": "1.0.0.0"
           }
         }
+      },
+      "Padel.Shared/1.0.0": {
+        "runtime": {
+          "Padel.Shared.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -66,6 +75,11 @@
       "sha512": ""
     },
     "Padel.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Padel.Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

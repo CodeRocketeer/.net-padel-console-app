@@ -24,6 +24,16 @@
         "runtime": {
           "bin/placeholder/Padel.Domain.dll": {}
         }
+      },
+      "Padel.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Padel.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Padel.Shared.dll": {}
+        }
       }
     }
   },
@@ -37,12 +47,18 @@
       "type": "project",
       "path": "../Padel.Domain/Padel.Domain.csproj",
       "msbuildProject": "../Padel.Domain/Padel.Domain.csproj"
+    },
+    "Padel.Shared/1.0.0": {
+      "type": "project",
+      "path": "../Padel.Shared/Padel.Shared.csproj",
+      "msbuildProject": "../Padel.Shared/Padel.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "Padel.Contracts >= 1.0.0",
-      "Padel.Domain >= 1.0.0"
+      "Padel.Domain >= 1.0.0",
+      "Padel.Shared >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -78,6 +94,9 @@
             },
             "C:\\Users\\jense\\Documents\\02_Training\\03_TryOuts\\dot-net-console-experiments\\PadelSeasonPlanner\\Padel.Domain\\Padel.Domain.csproj": {
               "projectPath": "C:\\Users\\jense\\Documents\\02_Training\\03_TryOuts\\dot-net-console-experiments\\PadelSeasonPlanner\\Padel.Domain\\Padel.Domain.csproj"
+            },
+            "C:\\Users\\jense\\Documents\\02_Training\\03_TryOuts\\dot-net-console-experiments\\PadelSeasonPlanner\\Padel.Shared\\Padel.Shared.csproj": {
+              "projectPath": "C:\\Users\\jense\\Documents\\02_Training\\03_TryOuts\\dot-net-console-experiments\\PadelSeasonPlanner\\Padel.Shared\\Padel.Shared.csproj"
             }
           }
         }

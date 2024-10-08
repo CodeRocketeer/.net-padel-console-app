@@ -15,3 +15,6 @@ C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\Pade
 C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\Padel.Application\obj\Debug\net8.0\refint\Padel.Application.dll
 C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\Padel.Application\obj\Debug\net8.0\Padel.Application.pdb
 C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\Padel.Application\obj\Debug\net8.0\ref\Padel.Application.dll
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\Padel.Application\obj\Debug\net8.0\Padel.Application.sourcelink.json
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\Padel.Application\bin\Debug\net8.0\Padel.Shared.dll
+C:\Users\jense\Documents\02_Training\03_TryOuts\dot-net-console-experiments\PadelSeasonPlanner\Padel.Application\bin\Debug\net8.0\Padel.Shared.pdb
