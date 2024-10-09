@@ -70,13 +70,8 @@ class Program
                 new User { Name = "Olivia", Sex = "F" },
            ];
 
-                for (int i = 0; i < players.Count; i++)
-            {
-                userService.CreateUser(players[i].Name, players[i].Sex);
-            }
-                
-
-            
+          var users =userService.CreateUsers(players);
+ 
         }
         else
         {
@@ -120,7 +115,7 @@ class Program
             dayOfWeek = "Monday"; 
             seasonTitle = "Default Season Title"; 
             startDate = DateTime.Now; 
-            amountOfMatches = 30;
+            amountOfMatches = 20;
         }
         else
         {
@@ -141,6 +136,8 @@ class Program
         }
 
         Season season = seasonService.CreateSeason(seasonTitle, dayOfWeek, startDate, players, amountOfMatches);
+
+
 
         Console.WriteLine($"\nGenerated Season: {season.Title}");
         Console.WriteLine($"Start Date: {season.StartDate.ToShortDateString()}");
@@ -188,10 +185,7 @@ class Program
             Console.WriteLine($"Season: {season.Title}, Start Date: {season.StartDate.ToShortDateString()}, End Date: {season.EndDate.ToShortDateString()}");
         }
 
-        Console.WriteLine("\nChoose an option:");
-        Console.WriteLine("1. Edit a season");
-        Console.WriteLine("2. Delete a season");
-        Console.WriteLine("3. Cancel");
+        DisplayAllSeasonsCommands();
 
         string choice = Console.ReadLine();
 
@@ -235,10 +229,7 @@ class Program
             Console.WriteLine(match);
         }
 
-        // Here you could add additional options to update the season details
-        Console.WriteLine("\nWhat would you like to do?");
-        Console.WriteLine("1. Update season details");
-        Console.WriteLine("2. Cancel");
+       DisplayEditSeasonCommands();
 
         string choice = Console.ReadLine();
 
@@ -266,5 +257,21 @@ class Program
         Console.WriteLine("3. Display all seasons");
         Console.WriteLine("4. Exit");
         Console.Write("Choose an option: ");
+    }
+
+   static void DisplayAllSeasonsCommands()
+    {
+
+        Console.WriteLine("\nChoose an option:");
+        Console.WriteLine("1. Edit a season");
+        Console.WriteLine("2. Delete a season");
+        Console.WriteLine("3. Cancel");
+    }
+
+    static void DisplayEditSeasonCommands()
+    {
+        Console.WriteLine("\nWhat would you like to do?");
+        Console.WriteLine("1. Update season details");
+        Console.WriteLine("2. Cancel");
     }
 }
