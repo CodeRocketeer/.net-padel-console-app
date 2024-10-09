@@ -7,7 +7,7 @@ using Padel.Domain.Models;
 class Program
 {
 
-    static bool IsHardcodedProperties = true; // Set to true to use defaults, false to take user input
+    static bool IsHardcodedProperties = false; // Set to true to use defaults, false to take user input
 
 
     static void Main(string[] args)
@@ -120,13 +120,15 @@ class Program
             dayOfWeek = "Monday"; 
             seasonTitle = "Default Season Title"; 
             startDate = DateTime.Now; 
-            amountOfMatches = 20;
+            amountOfMatches = 30;
         }
         else
         {
             // Prompt user for input
             Console.Write("Enter the day of the week for the matches (e.g., Monday): ");
             dayOfWeek = Console.ReadLine();
+            // first letter should be capital
+            dayOfWeek = dayOfWeek.Substring(0, 1).ToUpper() + dayOfWeek.Substring(1);
 
             Console.Write("Enter the season title: ");
             seasonTitle = Console.ReadLine();

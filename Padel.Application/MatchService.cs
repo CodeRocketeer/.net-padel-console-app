@@ -27,38 +27,46 @@ namespace Padel.Application
                 // Calculate the next match date
                 DateTime matchDate = GetNextMatchDate(startDate, dayOfWeek, matches.Count);
 
-                // Shuffle the players for random team selection
+                // Shuffle the players for random team selection based on last played date
                 var availablePlayers = players
                     .Where(p => !lastPlayed[p].HasValue || (matchDate - lastPlayed[p].Value).TotalDays > 7) // Ensure no consecutive matches
                     .OrderBy(p => Guid.NewGuid()) // Randomize the order
                     .ToList();
 
                 // Ensure we have enough players to form at least two teams
-                if (availablePlayers.Count >= 4)
+                if (availablePlayers.Count < 4)
                 {
-                    // Create teams from the available players
-                    var team1 = new Team(availablePlayers[0], availablePlayers[1]); // Team 1
-                    var team2 = new Team(availablePlayers[2], availablePlayers[3]); // Team 2
-
-                    // Check if the teams are balanced
-                    if (AreTeamsBalanced(team1, team2))
-                    {
-                        // Create and add the match to the list
-                        matches.Add(new Match(dayOfWeek, matchDate, team1, team2));
-
-                        // Update participation count and last played date
-                        UpdateParticipationCount(playerParticipation, lastPlayed, team1, matchDate);
-                        UpdateParticipationCount(playerParticipation, lastPlayed, team2, matchDate);
-                    }
+                    // If there aren't enough available players, randomly select from all players
+                    availablePlayers = players
+                        .OrderBy(p => Guid.NewGuid()) // Randomize the order
+                        .ToList();
                 }
-                else
+
+                // Ensure we still have enough players after the random selection
+                if (availablePlayers.Count < 4)
                 {
                     throw new InvalidOperationException("Not enough players to create teams.");
+                }
+
+                // Create teams from the available players
+                var team1 = new Team(availablePlayers[0], availablePlayers[1]); // Team 1
+                var team2 = new Team(availablePlayers[2], availablePlayers[3]); // Team 2
+
+                // Check if the teams are balanced
+                if (AreTeamsBalanced(team1, team2))
+                {
+                    // Create and add the match to the list
+                    matches.Add(new Match(dayOfWeek, matchDate, team1, team2));
+
+                    // Update participation count and last played date
+                    UpdateParticipationCount(playerParticipation, lastPlayed, team1, matchDate);
+                    UpdateParticipationCount(playerParticipation, lastPlayed, team2, matchDate);
                 }
             }
 
             return matches;
         }
+
 
         private DateTime GetNextMatchDate(DateTime startDate, string dayOfWeek, int matchIndex)
         {
