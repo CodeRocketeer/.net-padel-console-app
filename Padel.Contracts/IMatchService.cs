@@ -5,7 +5,7 @@ namespace Padel.Contracts
 {
     public interface IMatchService
     {
-        List<Match> GenerateMatches(string dayOfWeek, List<User> players, DateTime startDate);
+        List<Match> CreateMatches(string dayOfWeek, List<User> players, DateTime startDate, int AmountOfMatches);
 
     }
 }

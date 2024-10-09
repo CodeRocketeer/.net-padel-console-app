@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Padel.Contracts\Padel.Contracts.csproj" />
     <ProjectReference Include="..\Padel.Domain\Padel.Domain.csproj" />
+    <ProjectReference Include="..\Padel.Shared\Padel.Shared.csproj" />
   </ItemGroup>
 
 </Project>

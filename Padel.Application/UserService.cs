@@ -10,9 +10,9 @@ namespace Padel.Application
     {
         private readonly List<User> _users = new List<User>();
 
-        public List<User> AddUser(string name, string sex)
+        public List<User> CreateUser(string name, string sex)
         {
-            // Create a new user and add them to the list
+         
             var user = new User
             {
                 Id = Guid.NewGuid(),
@@ -26,6 +26,13 @@ namespace Padel.Application
 
         public List<User> GetAllUsers()
         {
+            return _users;
+        }
+
+        public List<User> CreateUsers(List<User> users)
+        {
+            _users.AddRange(users);
+
             return _users;
         }
     }

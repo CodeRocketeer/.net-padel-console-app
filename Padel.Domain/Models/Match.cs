@@ -7,6 +7,8 @@
         public Team Team1 { get; set; } = team1;
         public Team Team2 { get; set; } = team2;
 
+   
+
         public override string ToString()
         {
             return $"{Date.ToShortDateString()} ({DayOfWeek}): {Team1} vs {Team2}";
